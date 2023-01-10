@@ -1,47 +1,38 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+  <header class="inverted">
+    <h2>CKEditor 5 Classic in Vue</h2>
   </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <ckeditor :editor="editor" v-model="editorData" @ready="onReady" @input="onChange"></ckeditor>
+  </div>
+  <section class="inverted">
+    <p>Edit <code>src/App.vue</code> and save to reload.</p>
+    <a href="https://ckeditor.com/docs/ckeditor5/latest/installation/frameworks/vuejs-v3.html">See docs</a>
+  </section>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from "@ckeditor/ckeditor5-vue"
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+export default {
+  name: 'app',
+  components: {
+    ckeditor: CKEditor.component
+  },
+  data() {
+    return {
+      editor: ClassicEditor,
+      editorData: "<p>Hello from CKEditor 5!</p>"
+    };
+  },
+  methods: {
+    onReady( editor ) {
+      console.log( "CKEditor5 Vue Component is ready to use!", editor );
+    },
+    onChange( data ) {
+      console.log( data );
+    }
   }
 }
-</style>
+</script>
