@@ -1,29 +1,20 @@
 # vue-template-ckeditor5-classic
 
-This template should help get you started developing with Vue 3 in Vite.
+CKEditor 5 Classic integrated with [Create Vue](https://vuejs.org/guide/quick-start.html).
 
-## Recommended IDE Setup
+## Usage
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+To use this template as your starting point, you can use `degit`. It makes copies of git repositories.
 
-## Customize configuration
+For example:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```
+npx degit ckeditor/vue-template-ckeditor5-classic ckeditor-classic-demo
 ```
 
-### Compile and Hot-Reload for Development
+When you run `degit` some-user/some-repo, it will find the latest commit on https://github.com/some-user/some-repo and download the associated tar file to ~/.degit/some-user/some-repo/commithash.tar.gz if it doesn't already exist locally.
 
-```sh
-npm run dev
-```
+For more information refer to:
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- [Degit](https://github.com/Rich-Harris/degit) - How to scaffold projects.
+- [Create Vue](https://vuejs.org/guide/quick-start.html) - How to start Vue projects.
